@@ -10,9 +10,13 @@ app.use(express.urlencoded({extended:true}))
 app.use("/user", userRouter)
 
 
-app.use(cors({
-    origin:"*"
-  }))
+  // app.use(cors({
+  //   origin:['https://www.section.io', 'https://www.google.com/']
+  // }))
+  app.use((req,res,next)=>{
+    res.header("Access-Control-Allow-Origin","*")
+    next()
+  })
 
 app.get("/",(req,res)=>{
     res.send("Welcome to Home Page")

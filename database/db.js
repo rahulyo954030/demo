@@ -1,6 +1,6 @@
 import mongoose  from "mongoose"
 
-export default  mongoose.connect("mongodb+srv://rahulsingh:rahulsingh@cluster0.2vcaxbp.mongodb.net/?retryWrites=true&w=majority")
+export default  mongoose.connect("mongodb+srv://rahulsingh:rahulsingh@cluster0.x4uxcfi.mongodb.net/mock?retryWrites=true&w=majority")
 
 mongoose.connection.on("connected",()=>{
     console.log("connected to database successfully,");
