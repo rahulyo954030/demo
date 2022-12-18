@@ -10,13 +10,10 @@ app.use(express.urlencoded({extended:true}))
 app.use("/user", userRouter)
 
 
-  // app.use(cors({
-  //   origin:['https://www.section.io', 'https://www.google.com/']
-  // }))
-  app.use((req,res,next)=>{
-    res.header("Access-Control-Allow-Origin","https://spectacular-sorbet-c2279a.netlify.app/")
-    next()
-  })
+  app.use(cors({
+    origin:"*"
+  }))
+  
 
 app.get("/",(req,res)=>{
     res.send("Welcome to Home Page")
